@@ -21,15 +21,22 @@
         data-qmeta="ogDesc">
     <meta name="twitter:description"
         content="Online credit card checker instantly. Check CCN and CCV free. CC checker and CCV free. CC checker and Bin checker live or dead, free forever, checker.top.">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+
+    <!-- Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
     <script async="" src="https://cdn.sessionstack.com/sessionstack.js"></script>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Team RL Cc Gen">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#000">
+    <meta name="theme-color" content="#1e3a8a">
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style type="text/css">
         .navigation {
@@ -58,24 +65,25 @@
 
 <body>
     <div id="app">
+        <!-- Navigation Section -->
         <nav class="navigations">
-            <div class="site-header">
-                <a href="https://bbinl.site/"><img src="favicon.png" alt="Logo" class="header-logo"></a>
+            <a href="https://bbinl.site/" class="site-header">
+                <img src="favicon.png" alt="Logo" class="header-logo">
                 CxC Generator
-            </div>
+            </a>
             <div class="menu-container">
-                <div onclick="toggleMenu()" class="menu-toggle animated"><i class="fas fa-bars"></i></div>
+                <div onclick="toggleMenu()" class="menu-toggle"><i class="fas fa-bars"></i></div>
                 <ul id="dropdown-menu" class="dropdown-menu">
-                    <li><a href="https://bbinl.site/cc-gen/" target="_blank">💳 cc generator</a></li>
-                    <li><a href="https://bbinl.site/cc-checker-faker/" target="_blank">🔎 cc checker</a></li>
-                    <li><a href="https://bbinl.site/b3-checker/" target="_blank">🧠 b3 cc checker</a></li>
-                    <li><a href="https://bbinl.site/stripe-checker/" target="_blank">☠ stripe cc checker</a></li>
-                    <li><a href="https://bbinl.site/checker-top/" target="_blank">🔎 checker.top</a></li>
-                    <li><a href="https://bbinl.site/vbv-checker/" target="_blank">🔎 vbv checker</a></li>
-                    <li><a href="https://bbinl.site/gen-chk/" target="_blank">🧰 cc gen + check</a></li>
-                    <li><a href="https://bbinl.site/fake-address/" target="_blank">⛩ Fake Address</a></li>
-                    <li><a href="https://t.me/bro_bin_lagbe" target="_blank">👥 Join Us</a></li>
-                    <li><a href="" target="_blank">💎 bBINl all API</a></li>
+                    <li><a href="https://bbinl.site/cc-gen/" target="_blank">cc generator</a></li>
+                    <li><a href="https://bbinl.site/cc-checker-faker/" target="_blank">cc checker</a></li>
+                    <li><a href="https://bbinl.site/b3-checker/" target="_blank">b3 cc checker</a></li>
+                    <li><a href="https://bbinl.site/stripe-checker/" target="_blank">stripe cc checker</a></li>
+                    <li><a href="https://bbinl.site/checker-top/" target="_blank">checker.top</a></li>
+                    <li><a href="https://bbinl.site/vbv-checker/" target="_blank">vbv checker</a></li>
+                    <li><a href="https://bbinl.site/gen-chk/" target="_blank">cc gen + check</a></li>
+                    <li><a href="https://bbinl.site/fake-address/" target="_blank">Fake Address</a></li>
+                    <li><a href="https://t.me/bro_bin_lagbe" target="_blank">Join Us</a></li>
+                    <li><a href="" target="_blank">bBINl all API</a></li>
                 </ul>
             </div>
         </nav>
@@ -90,126 +98,176 @@
                     'params': {}
                 };
             </script>
-            <script type="text/javascript"
+            <script type="text/javascript" async
                 src="//www.highperformanceformat.com/aeb1dc240df8fbfaef1b2b68907cfd5a/invoke.js"></script>
         </div>
+
         <div class="container">
+            <!-- BIN Detail Section -->
             <div class="bin-section">
                 <div class="bin-dropdown-card">
                     <div onclick="toggleDropdown(this)" class="bin-dropdown-header">
-                        <div class="bin-dropdown-title">BINs</div>
-                        <div class="bin-dropdown-arrow">▼</div>
+                        <div class="bin-dropdown-title"><i class="fa-solid fa-layer-group"
+                                style="color: var(--primary);"></i> Available BINs</div>
+                        <i class="fa-solid fa-chevron-down bin-dropdown-arrow"></i>
                     </div>
                     <div class="bin-dropdown-details">
                         <div class="bin-dropdown-container nested-dropdown-container">
+
                             <div class="bin-dropdown-card">
                                 <div onclick="toggleDropdown(this)" class="bin-dropdown-header">
-                                    <div class="bin-dropdown-title">YouTube Premium BIN</div>
-                                    <div class="bin-dropdown-arrow">▼</div>
+                                    <div class="bin-dropdown-title"><i class="fa-brands fa-youtube"
+                                            style="color: #ef4444;"></i> YouTube Premium</div>
+                                    <i class="fa-solid fa-chevron-down bin-dropdown-arrow"></i>
                                 </div>
                                 <div class="bin-dropdown-details">
-                                    <div class="bin-dropdown-row"><span class="bin-dropdown-label">BIN:</span> <span
-                                            class="bin-dropdown-value bin-live">515462002xxxxxxx</span></div>
-                                    <div class="bin-dropdown-row"><span class="bin-dropdown-label">Date:</span> <span
-                                            class="bin-dropdown-value">09/27</span></div>
-                                    <div class="bin-dropdown-row"><span class="bin-dropdown-label">Street:</span> <span
-                                            class="bin-dropdown-value">Dhaka er oli-goli</span></div>
-                                    <div class="bin-dropdown-row"><span class="bin-dropdown-label">Postcode:</span>
+                                    <div class="bin-dropdown-row">
+                                        <span class="bin-dropdown-label"><i class="fa-solid fa-credit-card icon-sm"></i>
+                                            BIN:</span>
+                                        <span class="bin-dropdown-value bin-live">515462002xxxxxxx</span>
+                                    </div>
+                                    <div class="bin-dropdown-row">
+                                        <span class="bin-dropdown-label"><i
+                                                class="fa-solid fa-calendar-days icon-sm"></i> Date:</span>
+                                        <span class="bin-dropdown-value">09/27</span>
+                                    </div>
+                                    <div class="bin-dropdown-row">
+                                        <span class="bin-dropdown-label"><i class="fa-solid fa-road icon-sm"></i>
+                                            Street:</span>
+                                        <span class="bin-dropdown-value">Dhaka er oli-goli</span>
+                                    </div>
+                                    <div class="bin-dropdown-row">
+                                        <span class="bin-dropdown-label"><i class="fa-solid fa-map-pin icon-sm"></i>
+                                            Postcode:</span>
                                         <span class="bin-dropdown-value">1212</span>
                                     </div>
-                                    <div class="bin-dropdown-row"><span class="bin-dropdown-label">City:</span> <span
-                                            class="bin-dropdown-value">Dhaka</span></div>
-                                    <div class="bin-dropdown-row"><span class="bin-dropdown-label">Country:</span> <span
-                                            class="bin-dropdown-value">Bangladesh</span></div>
+                                    <div class="bin-dropdown-row">
+                                        <span class="bin-dropdown-label"><i class="fa-solid fa-city icon-sm"></i>
+                                            City:</span>
+                                        <span class="bin-dropdown-value">Dhaka</span>
+                                    </div>
+                                    <div class="bin-dropdown-row">
+                                        <span class="bin-dropdown-label"><i
+                                                class="fa-solid fa-earth-americas icon-sm"></i> Country:</span>
+                                        <span class="bin-dropdown-value">Bangladesh</span>
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="bin-dropdown-card">
                                 <div onclick="toggleDropdown(this)" class="bin-dropdown-header">
-                                    <div class="bin-dropdown-title">Hotspot Shield BIN</div>
-                                    <div class="bin-dropdown-arrow">▼</div>
+                                    <div class="bin-dropdown-title"><i class="fa-solid fa-shield-halved"
+                                            style="color: #3b82f6;"></i> Hotspot Shield</div>
+                                    <i class="fa-solid fa-chevron-down bin-dropdown-arrow"></i>
                                 </div>
                                 <div class="bin-dropdown-details">
-                                    <div class="bin-dropdown-row"><span class="bin-dropdown-label">BIN:</span> <span
-                                            class="bin-dropdown-value bin-live">41546444006xxxxx</span></div>
-                                    <div class="bin-dropdown-row"><span class="bin-dropdown-label">Date:</span> <span
-                                            class="bin-dropdown-value">10/27</span></div>
-                                    <div class="bin-dropdown-row"><span class="bin-dropdown-label">ZIP:</span> <span
-                                            class="bin-dropdown-value">1000</span></div>
-                                    <div class="bin-dropdown-row"><span class="bin-dropdown-label">IP:</span> <span
-                                            class="bin-dropdown-value">OWN</span></div>
+                                    <div class="bin-dropdown-row">
+                                        <span class="bin-dropdown-label"><i class="fa-solid fa-credit-card icon-sm"></i>
+                                            BIN:</span>
+                                        <span class="bin-dropdown-value bin-live">41546444006xxxxx</span>
+                                    </div>
+                                    <div class="bin-dropdown-row">
+                                        <span class="bin-dropdown-label"><i
+                                                class="fa-solid fa-calendar-days icon-sm"></i> Date:</span>
+                                        <span class="bin-dropdown-value">10/27</span>
+                                    </div>
+                                    <div class="bin-dropdown-row">
+                                        <span class="bin-dropdown-label"><i class="fa-solid fa-map-pin icon-sm"></i>
+                                            ZIP:</span>
+                                        <span class="bin-dropdown-value">1000</span>
+                                    </div>
+                                    <div class="bin-dropdown-row">
+                                        <span class="bin-dropdown-label"><i
+                                                class="fa-solid fa-network-wired icon-sm"></i> IP:</span>
+                                        <span class="bin-dropdown-value">OWN</span>
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="toast-notification" class="toast-notification"></div>
-            <br>
-            <div class="row">
-                <div class="col-md-6">
-                    <form action="/" method="post" autocomplete="off">
-                        <div class="form-group">
-                            <label for="bin">BIN</label>
-                            <input type="text" name="bin" id="bin" autofocus="autofocus" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Date</label>
-                            <div class="input-group">
 
-                                <span class="input-group-addon"><input type="checkbox" checked></span>
-                                <select name="month" id="month" class="form-control">
-                                    <option value="">Random</option>
-                                    <option value="01">01</option>
-                                    <option value="02">02</option>
-                                    <option value="03">03</option>
-                                    <option value="04">04</option>
-                                    <option value="05">05</option>
-                                    <option value="06">06</option>
-                                    <option value="07">07</option>
-                                    <option value="08">08</option>
-                                    <option value="09">09</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                </select>
-                                <div class="input-group-field">
+            <div id="toast-notification" class="toast-notification"><i class="fa-solid fa-circle-check"
+                    style="color: var(--green);"></i> Copied to clipboard</div>
+
+            <div class="row">
+                <!-- FORM SECTION -->
+                <div class="col-md-6">
+                    <div class="app-card">
+                        <form action="/" method="post" autocomplete="off">
+                            <div class="form-group">
+                                <label for="bin"><i class="fa-solid fa-credit-card icon-sm"></i> BIN</label>
+                                <input type="text" name="bin" id="bin" autofocus="autofocus" class="form-control"
+                                    placeholder="Enter BIN">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-calendar icon-sm"></i> Date</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><input type="checkbox" checked></span>
+                                    <select name="month" id="month" class="form-control">
+                                        <option value="">Random</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
                                     <select name="year" id="year" class="form-control">
                                         <option value="">Random</option>
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group-inline">
-                            <div class="form-group cvc-group">
-                                <label>CVC</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon"><input type="checkbox" checked></span>
-                                    <input type="number" name="cvc" id="cvc" placeholder="Random" class="form-control">
+                            <div class="form-group-inline">
+                                <div class="form-group cvc-group">
+                                    <label><i class="fa-solid fa-lock icon-sm"></i> CVC</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><input type="checkbox" checked></span>
+                                        <input type="number" name="cvc" id="cvc" placeholder="Random"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group quantity-group">
+                                    <label for="quantity"><i class="fa-solid fa-hashtag icon-sm"></i> Quantity</label>
+                                    <input type="number" id="quantity" name="quantity" class="form-control" max="1000"
+                                        placeholder="15">
                                 </div>
                             </div>
-                            <div class="form-group quantity-group">
-                                <label for="quantity">Quantity</label>
-                                <input type="number" id="quantity" name="quantity" class="form-control" max="1500">
+                            <div class="form-group" style="margin-bottom: 10px;">
+                                <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-gear"></i>
+                                    Generate</button>
                             </div>
-                        </div>
-                        <div class="form-group text-center">
-                            <button type="submit" class="btn btn-primary btn-block">Generate Cards</button>
-                        </div>
-                    </form>
-                    <button type="submit" onclick="copy()" class="btn btn-primary btn-block"><b>Copy Cards</b></button>
+                        </form>
+                        <button type="button" onclick="copy()" class="btn btn-primary btn-block"><i
+                                class="fa-regular fa-copy"></i> Copy Cards</button>
+                    </div>
                 </div>
+
+                <!-- RESULT SECTION -->
                 <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="result">Result</label>
-                        <textarea id="result" cols="30" rows="11" class="form-control result"></textarea>
+                    <div class="app-card">
+                        <div class="form-group"
+                            style="height: 100%; display: flex; flex-direction: column; margin-bottom: 0;">
+                            <label for="result"><i class="fa-solid fa-terminal icon-sm"></i> Result Output</label>
+                            <textarea id="result" cols="30" rows="11" class="form-control result"
+                                style="flex-grow: 1;"></textarea>
+                        </div>
                     </div>
                 </div>
             </div>
+
             <input type="hidden" name="IL_IN_ARTICLE">
             <input type="hidden" name="IL_IN_TAG" value="2">
         </div>
-        <br>
+
         <div class="text-center" style="margin: 20px 0;">
             <script type="text/javascript">
                 atOptions = {
@@ -220,55 +278,38 @@
                     'params': {}
                 };
             </script>
-            <script type="text/javascript"
+            <script type="text/javascript" async
                 src="//www.highperformanceformat.com/3c1293e760852e3cc5ffaaca4c1f2e77/invoke.js"></script>
         </div>
 
-        <br>
+        <!-- FOOTER SECTION -->
         <footer>
-            <p>&copy; 2026 CxC Generator. All Rights Reserved</p>
-            <p style="margin-top: 8px;">Telegram:
-                <a href="https://t.me/no_coder_xone" target="_blank">No Coder Xone</a>
-                <span style="margin: 0 8px; color: #94a3b8;">|</span>
-                Developer: <a href="https://t.me/no_coder_pro" target="_blank">No Coder pro</a>
+            <p>&copy; 2026 CxC Generator. All Rights Reserved.</p>
+            <p style="margin-top: 12px; display: flex; align-items: center; justify-content: center; gap: 15px;">
+                <span><i class="fa-brands fa-telegram"></i> <a href="https://t.me/no_coder_xone" target="_blank">No
+                        Coder Xone</a></span>
+                <span style="color: var(--border);">|</span>
+                <span><i class="fa-solid fa-code"></i> <a href="https://t.me/no_coder_pro" target="_blank">No Coder
+                        pro</a></span>
             </p>
         </footer>
+
         <div id="hiddenElement" style="display: none;">
             source code: https://github.com/avipatilpro/CC_Gen?tab=readme-ov-file ,
             https://avipatilpro.github.io/CC_Gen/
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js?v=1.1" defer></script>
     <script>
-        (function () {
-            const monthDropdown = document.getElementById('month');
-            const yearDropdown = document.getElementById('year');
-            let selectedMonth = monthDropdown.value;
-
-            monthDropdown.addEventListener('change', function () {
-                selectedMonth = monthDropdown.value;
-            });
-
-            yearDropdown.addEventListener('change', function () {
-                setTimeout(function () {
-                    if (selectedMonth) {
-                        const option = Array.from(monthDropdown.options).find(opt => opt.value === selectedMonth);
-                        if (option && !option.disabled) {
-                            monthDropdown.value = selectedMonth;
-                        }
-                    }
-                }, 10);
-            });
-        })();
-    </script>
-    <script>
-        if (window.innerWidth >= 768) {
-            var adScript = document.createElement('script');
-            adScript.type = 'text/javascript';
-            adScript.src = '//pl27372759.profitableratecpm.com/fb/4f/37/fb4f377c61117088ab923c6d535b8371.js';
-
-            document.body.appendChild(adScript);
-        }
+        window.addEventListener('DOMContentLoaded', (event) => {
+            if (window.innerWidth >= 768) {
+                var adScript = document.createElement('script');
+                adScript.type = 'text/javascript';
+                adScript.async = true;
+                adScript.src = '//pl27372759.profitableratecpm.com/fb/4f/37/fb4f377c61117088ab923c6d535b8371.js';
+                document.body.appendChild(adScript);
+            }
+        });
     </script>
 </body>
 
