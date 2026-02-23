@@ -251,11 +251,11 @@
             background: var(--bg-color);
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
-            padding: 0 16px;
+            padding: 0 2px;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 48px;
+            height: 25px;
         }
 
         .input-group>.form-control {
@@ -537,3 +537,4 @@
                 min-height: 400px;
             }
         }
+
