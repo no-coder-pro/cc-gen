@@ -1,21 +1,49 @@
 :root {
-    --dark-blue: #1a2035;
-    --medium-blue: #232a41;
-    --light-blue: #3e4a6e;
-    --green: #1fc226;
-    --red-bin: #ff1100;
-    --red-dead: #1f0200;
-    --orange-unknown: #ff9800;
-    --yellow-btn: #ffc107;
-    --orange-btn: #fd7e14;
-    --text-color-light: #f8f9fa;
-    --text-color-dark: #212529;
+    --primary-red: #ff0000;
+    --primary-red-hover: #cc0000;
+    --dark-blue: #f0f2f5;
+    --medium-blue: #ffffff;
+    --light-blue: #d9d9d9;
+    --green: #52c41a;
+    --red-bin: #ff4d4f;
+    --red-dead: #ff4d4f;
+    --orange-unknown: #faad14;
+    --yellow-btn: #fadb14;
+    --orange-btn: #fa8c16;
+
+    --text-color-light: #1f1f1f;
+    --text-color-dark: #ffffff;
+    --text-muted: #8c8c8c;
+
     --light: var(--dark-blue);
     --border: var(--light-blue);
-    --shadow: rgba(0, 0, 0, 0.3);
-    --lighter: var(--medium-blue);
-    --text-muted: #aaaaaa;
+    --shadow: rgba(0, 0, 0, 0.05);
+    --lighter: #f5f5f5;
     --text: var(--text-color-light);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-red: #ff0000;
+        --primary-red-hover: #cc0000;
+        --dark-blue: #141414;
+        --medium-blue: #1f1f1f;
+        --light-blue: #303030;
+
+        --green: #49aa19;
+        --red-bin: #d9363e;
+        --red-dead: #a61d24;
+        --orange-unknown: #d89614;
+        --yellow-btn: #d8bd14;
+        --orange-btn: #d87a16;
+
+        --text-color-light: #e0e0e0;
+        --text-color-dark: #e0e0e0;
+        --text-muted: #8c8c8c;
+
+        --shadow: rgba(0, 0, 0, 0.2);
+        --lighter: #262626;
+    }
 }
 
 /* Base & Typography */
@@ -41,9 +69,9 @@ body {
 label {
     display: inline-block;
     max-width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     color: var(--text-color-light);
-    font-weight: 700;
+    font-weight: 600;
 }
 
 /* Layout & Grid System */
@@ -100,39 +128,43 @@ label {
 }
 
 .menu-toggle {
-    font-size: 26px;
+    font-size: 24px;
     cursor: pointer;
-    color: white;
+    color: var(--text-color-light);
     padding: 8px 12px;
-    transition: background 0.3s;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+    border-radius: 6px;
 }
 
 .menu-toggle:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--light-blue);
+    transform: scale(1.05);
 }
 
 /* Dropdown Menu */
 .dropdown-menu {
     position: absolute;
     right: 0;
-    top: 110%;
-    background-color: #060079;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    border-radius: 6px;
+    top: 120%;
+    background-color: var(--medium-blue);
+    box-shadow: 0 4px 15px var(--shadow), 0 0 1px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--light-blue);
+    border-radius: 4px;
     padding: 0;
     margin: 0;
     list-style: none;
-    min-width: 220px;
+    min-width: 240px;
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-15px) scale(0.95);
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+    z-index: 1000;
 }
 
 .dropdown-menu.show {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
     visibility: visible;
     pointer-events: auto;
 }
@@ -141,14 +173,18 @@ label {
     display: block;
     padding: 12px 16px;
     text-decoration: none;
-    color: white;
+    color: var(--text-color-light);
     font-weight: 500;
-    border-bottom: 1px solid #eee;
-    transition: background 0.2s;
+    font-size: 15px;
+    border-bottom: 1px solid var(--lighter);
+    transition: background 0.2s, padding-left 0.2s, color 0.2s;
 }
 
 .dropdown-menu li a:hover {
-    background-color: #fa0707;
+    background-color: var(--lighter);
+    color: var(--primary-red);
+    padding-left: 20px;
+    /* Subtle slide effect */
 }
 
 .dropdown-menu li:last-child a {
@@ -159,21 +195,28 @@ label {
 .form-control {
     display: block;
     width: 100%;
-    height: 45px;
-    padding: 10px 15px;
+    height: 48px;
+    padding: 10px 14px;
     font-size: 15px;
-    line-height: 1.42857143;
+    line-height: 1.5;
     color: var(--text-color-light);
     background-color: var(--medium-blue);
     background-image: none;
     border: 1px solid var(--light-blue);
     border-radius: 4px;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .05);
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
+.form-control:focus {
+    border-color: var(--primary-red);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.25);
+}
+
 textarea.form-control {
-    height: 335px;
+    height: 360px;
+    /* Change this value to increase/decrease the height of the Result box */
     resize: vertical;
 }
 
@@ -198,12 +241,12 @@ input[type=search] {
 .input-group-addon {
     width: auto;
     flex-shrink: 0;
-    padding: 10px 15px;
+    padding: 10px 14px;
     font-size: 15px;
-    font-weight: 400;
-    line-height: 1;
-    color: #2c3e50;
-    background-color: var(--medium-blue);
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--text-color-light);
+    background-color: var(--lighter);
     border: 1px solid var(--light-blue);
     border-radius: 4px;
 }
@@ -216,14 +259,14 @@ input[type=search] {
     border-radius: 4px;
 }
 
-.input-group > select.form-control,
-.input-group-field > select.form-control {
+.input-group>select.form-control,
+.input-group-field>select.form-control {
     flex-grow: 1;
     min-width: 0;
     width: auto;
 }
 
-.input-group > input.form-control {
+.input-group>input.form-control {
     flex-grow: 1;
     min-width: 0;
     width: auto;
@@ -255,7 +298,7 @@ input[type=search] {
 .btn {
     display: inline-block;
     margin-bottom: 0;
-    font-weight: 400;
+    font-weight: 500;
     text-align: center;
     vertical-align: middle;
     touch-action: manipulation;
@@ -263,20 +306,35 @@ input[type=search] {
     background-image: none;
     border: 1px solid transparent;
     white-space: nowrap;
-    padding: 10px 15px;
+    padding: 12px 18px;
     font-size: 15px;
-    line-height: 1.42857143;
+    line-height: 1.5;
     border-radius: 4px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, transform 0.1s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
 }
 
 .btn-primary {
-    color: var(--text-color-dark);
-    background: linear-gradient(45deg, var(--yellow-btn), var(--orange-btn));
-    border-color: #000000;
+    color: #ffffff;
+    background: var(--primary-red);
+    border-color: var(--primary-red);
+    box-shadow: 0 2px 4px var(--shadow);
+}
+
+.btn-primary:hover {
+    background: var(--primary-red-hover);
+    border-color: var(--primary-red-hover);
 }
 
 .btn-block {
@@ -315,10 +373,9 @@ input[type=search] {
 .bin-section {
     padding: 5px 2px;
     background-color: var(--dark-blue);
-    /* Removed border-bottom as requested */
-    max-width: 520px; /* Changed to max-width for responsiveness */
-    width: 100%; /* Ensure it takes full width up to max-width */
-    margin: 0 auto; /* Center the section */
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .bin-dropdown-container {
@@ -361,19 +418,24 @@ input[type=search] {
 
 .bin-dropdown-card {
     flex: 1;
-    min-width: 200px; /* Reduced width */
-    font-family: Arial, sans-serif;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px var(--shadow);
+    min-width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px var(--shadow);
     overflow: hidden;
     margin-bottom: 1px;
     background-color: var(--medium-blue);
     border: 1px solid var(--light-blue);
+    transition: box-shadow 0.3s ease;
+}
+
+.bin-dropdown-card:hover {
+    box-shadow: 0 4px 12px var(--shadow);
 }
 
 .bin-dropdown-header {
-    background-color: var(--red-bin);
+    background-color: var(--lighter);
     color: var(--text-color-light);
+    border-bottom: 1px solid var(--light-blue);
     padding: 10px 12px;
     display: flex;
     justify-content: space-between;
@@ -425,13 +487,19 @@ input[type=search] {
     color: var(--text-color-light);
     text-align: right;
     font-family: monospace;
+    font-size: 14px;
     cursor: pointer;
+    background-color: var(--lighter);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
 }
 
 .bin-live {
     color: var(--green);
     font-weight: bold;
 }
+
 .bin-dead {
     color: var(--red-dead);
     font-weight: bold;
@@ -492,55 +560,59 @@ input[type=search] {
 }
 
 /* Footer Styling */
-.main-footer {
+footer {
     text-align: center;
-    margin-top: 30px;
-    padding: 20px;
-    background-color: var(--medium-blue);
-    border-top: 2px solid var(--light-blue);
-    color: var(--text-color-light);
+    margin-top: 40px;
+    padding: 20px 15px;
+    background-color: var(--dark-blue);
+    border-top: 1px solid var(--light-blue);
+    color: var(--text-muted);
 }
 
-.main-footer p {
+footer p {
     margin: 0;
     font-size: 14px;
 }
 
-.main-footer a {
-    color: var(--green);
+footer a {
+    color: #ff0000;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
 }
 
-.main-footer a:hover {
+footer a:hover {
     text-decoration: underline;
+    color: var(--primary-red-hover);
 }
 
 /* Social Links */
 .social-links {
-    margin-top: 15px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 24px;
 }
 
 .social-links a {
-    color: var(--text-color-light);
-    font-size: 24px;
-    transition: color 0.3s ease;
+    color: var(--text-muted);
+    font-size: 20px;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .social-links a:hover {
-    color: var(--green);
+    color: var(--primary-blue);
+    transform: translateY(-2px);
 }
 
 /* Utility Classes */
 .live {
     color: var(--green);
 }
+
 .dead {
     color: var(--red-dead);
 }
+
 .unknown {
     color: var(--orange-unknown);
 }
@@ -556,23 +628,29 @@ input[type=search] {
     .container {
         width: 970px;
     }
+
     .col-md-4,
     .col-md-6,
     .col-md-8 {
         float: left;
     }
+
     .col-md-8 {
         width: 66.66666667%;
     }
+
     .col-md-6 {
         width: 50%;
     }
+
     .col-md-4 {
         width: 33.33333333%;
     }
+
     .col-md-offset-2 {
         margin-left: 16.66666667%;
     }
+
     .col-md-6:has(textarea#result) {
         padding-left: 15px;
     }
@@ -614,9 +692,9 @@ input[type=search] {
         padding-right: 15px;
         box-sizing: border-box;
     }
-    
-    .form-group .input-group > select.form-control,
-    .form-group .input-group .input-group-field > select.form-control {
+
+    .form-group .input-group>select.form-control,
+    .form-group .input-group .input-group-field>select.form-control {
         flex-grow: 1;
         min-width: 0;
         width: auto;
@@ -644,18 +722,18 @@ input[type=search] {
         width: auto;
     }
 
-    .form-group > input.form-control {
+    .form-group>input.form-control {
         width: 100%;
         box-sizing: border-box;
     }
 
-    .col-md-4 .form-group > input.form-control {
+    .col-md-4 .form-group>input.form-control {
         width: 100%;
         box-sizing: border-box;
     }
 
     .bin-dropdown-card {
-        min-width: unset; /* Allow cards to shrink below 200px */
-        max-width: 100%; /* Ensure cards don't overflow on small screens */
+        min-width: unset;
+        max-width: 100%;
     }
 }
