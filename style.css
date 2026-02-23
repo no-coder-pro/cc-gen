@@ -600,11 +600,18 @@ footer a:hover {
 }
 
 .social-links a:hover {
-    color: var(--primary-blue);
+    color: var(--primary-red);
     transform: translateY(-2px);
 }
 
 /* Utility Classes */
+.text-center {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .live {
     color: var(--green);
 }
