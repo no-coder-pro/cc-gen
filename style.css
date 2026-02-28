@@ -416,13 +416,31 @@
 
         .bin-dropdown-details.show {
             padding: 16px 20px;
-            max-height: 1000px;
+            max-height: 2000px;
             border-top: 1px solid var(--border);
+        }
+
+        .bin-grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            width: 100%;
+        }
+
+        .bin-grid-container .bin-dropdown-card {
+            flex: 1 1 100%;
+            margin-bottom: 0;
+        }
+
+        @media (min-width: 768px) {
+            .bin-grid-container .bin-dropdown-card {
+                flex: 1 1 calc(50% - 16px);
+            }
         }
 
         .nested-dropdown-container .bin-dropdown-card {
             box-shadow: none;
-            margin-bottom: 10px;
+            border: 1px solid var(--border);
         }
 
         .bin-dropdown-row {
